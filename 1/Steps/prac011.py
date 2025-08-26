@@ -16,6 +16,14 @@ while running:
 
     screen.fill((128, 128, 128)) # 배경색
     pygame.draw.rect(screen, (0, 128, 255), (50, 50, 50, 50)) # 캐릭터
+
+    pygame.draw.line(screen, (255, 0, 0), (0, 300), (800, 300), 2)
+    pygame.draw.line(screen, (0, 255, 0), (400, 0), (400, 800), 2)
+
+    pygame.draw.circle(screen, (255, 255, 0), (400, 300), 50)
+
+    pygame.draw.polygon(screen, (128, 0, 128), ((600, 400), (500, 500), (700, 500)))
+
     pygame.display.update()
 
 pygame.quit()
