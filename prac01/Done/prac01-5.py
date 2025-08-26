@@ -15,7 +15,7 @@ charcter_image = pygame.image.load('C:/Users/sunje/Desktop/Commit/school.png')
 charcter_position = [50, 50]
 
 # 적 설정
-enemy = pygame.Rect(200, 200, 64, 64)
+enemy = pygame.Rect(600, 400, 64, 64)
 enemy_color = (255, 0, 0)
 
 # 맵 설정
