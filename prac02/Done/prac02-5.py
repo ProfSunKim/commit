@@ -8,6 +8,7 @@ pygame.init()                                   # pygame 기능 전부 초기화
 screen = pygame.display.set_mode((800, 600))    # 800x600 크기의 게임 창 만들기
 pygame.display.set_caption("본인 학번, 이름")
 clock = pygame.time.Clock()                     # FPS(초당 프레임) 제어용 시계
+font = pygame.font.SysFont(None, 24)            # 기본 글꼴(크기 24)
 
 # 플레이어 관련 변수
 player_pos = pygame.Vector2(400, 300)           # 플레이어 위치(화면 중앙에서 시작)
@@ -127,7 +128,7 @@ def check_collisions():
                 pygame.quit()
                 exit()
 
-# 그리기 함수 (배경/플레이어/적/총알)
+# 그리기 함수 (배경/플레이어/적/총알/UI)
 def draw_scene():
     """
     화면을 모두 그린 뒤 마지막에 flip()으로 실제 모니터에 표시.
@@ -141,7 +142,10 @@ def draw_scene():
         pygame.draw.circle(screen, enemy["color"], enemy["pos"], 12)    # 적 객체
     for bullet in bullets: 
         pygame.draw.circle(screen, (255, 255, 0), bullet[0], 5)         # 총알 객체
-    
+
+    # UI를 그리는 부분(font.render(표시될 글씨, 안티앨리어싱 여부(True), 색상), (x,y)글씨 위치 좌표)
+    screen.blit(font.render("HP " + str(player_hp), True, (255,255,255)), (10, 85))
+
     pygame.display.flip()                                               # 더블버퍼링 --> 실제 화면으로 전환
 
 # 메인 루프, 모든 함수를 실행 시키는 부분
