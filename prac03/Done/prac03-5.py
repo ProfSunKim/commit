@@ -147,7 +147,6 @@ while running:
                 gap, left = 150, (screen_width - (len(enemies)-1) * 150) // 2
                 for i, enemy in enumerate(enemies):
                     x, y = left + i*gap, 120
-                    pygame.draw.rect(screen, colors["RED"], (x, y, 80, 80))
                     if mouse_pos[0] > x and mouse_pos[0] < x+80 and mouse_pos[1] > y and mouse_pos[1] < y+80:
                         target = enemies[i]
                         log = [attack(player, target, player.skills[choice])]   # 플레이어 공격
