@@ -65,8 +65,9 @@ enemies = [
 # --------------------------
 # 게임 루프
 # --------------------------
-options = ["Fight","Run"]
-choice = -1
+options = ["Fight","Run"]                           # 메뉴 버튼 글자
+choice = -1                                         # 선택한 메뉴 (choice=0 첫번째 메뉴, choice=2 두번째 메뉴, ...)
+btn_width, btn_height, btn_gap = 60, 30, 40         # 메뉴 버튼 크기, 간격 (변경 가능)
 running = True
 while running:
     for event in pygame.event.get():
@@ -75,9 +76,8 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:    # 마우스 버튼이 눌렸을 때
             choice = -1
             mouse_pos = pygame.mouse.get_pos()      # 마우스의 포지션을 받아서 mouse_pos에 저장
-            button_width, button_height = 60, 30    # 메뉴 버튼 크기 (변경 가능)
             for i, option in enumerate(options):
-                button = pygame.Rect(screen_width//2-button_width//2, 400+i*40-button_height//2, button_width, button_height)
+                button = pygame.Rect(screen_width//2-btn_width//2, 400+i*btn_gap-btn_height//2, btn_width, btn_height)
                 if mouse_pos[0] > button.x and mouse_pos[0] < button.x+button.width:
                     if mouse_pos[1] > button.y and mouse_pos[1] < button.y+button.height:
                         choice = i
@@ -102,7 +102,7 @@ while running:
 
     # 메뉴 옵션 표시
     for i, option in enumerate(options):
-        draw_text(screen, font, option, (screen_width//2, 400+i*40), (0,200,200) if i==choice else colors["WHITE"], True)
+        draw_text(screen, font, option, (screen_width//2, 400+i*btn_gap), (0,200,200) if i==choice else colors["WHITE"], True)
 
     pygame.display.flip()                   # 화면 업데이트
     clock.tick(60)                          # 초당 60프레임
