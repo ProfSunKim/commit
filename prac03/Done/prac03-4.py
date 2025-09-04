@@ -86,7 +86,6 @@ while running:
         if event.type == pygame.QUIT:               # 종료 버튼 누르면 게임 종료
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN:    # 마우스 버튼이 눌렸을 때
-            choice = -1
             mouse_pos = pygame.mouse.get_pos()      # 마우스의 포지션을 받아서 mouse_pos에 저장
             # ----------------------
             # 메인 메뉴 선택 (Fight / Run)
