@@ -74,7 +74,6 @@ while running:
         if event.type == pygame.QUIT:               # 종료 버튼 누르면 게임 종료
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN:    # 마우스 버튼이 눌렸을 때
-            choice = -1
             mouse_pos = pygame.mouse.get_pos()      # 마우스의 포지션을 받아서 mouse_pos에 저장
             for i, option in enumerate(options):
                 button = pygame.Rect(screen_width//2-btn_width//2, 400+i*btn_gap-btn_height//2, btn_width, btn_height)
