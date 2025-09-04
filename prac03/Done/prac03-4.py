@@ -41,17 +41,6 @@ def draw_hp(screen, x, y, width, height, hp, maxhp, colors):
     pygame.draw.rect(screen, colors["GREEN"], (x, y, int(width*max(0,hp/maxhp)), height))
 
 # --------------------------
-# 체력바 그리는 함수
-# --------------------------
-def draw_hp(screen, x, y, width, height, hp, maxhp, colors):
-    # 체력바 배경 (흰색 테두리)
-    pygame.draw.rect(screen, colors["WHITE"], (x-2, y-2, width+4, height+4))
-    # 체력바 기본 빨간색
-    pygame.draw.rect(screen, colors["RED"], (x, y, width, height))
-    # 체력바 현재 체력만큼 녹색으로 표시
-    pygame.draw.rect(screen, colors["GREEN"], (x, y, int(width*max(0,hp/maxhp)), height))
-
-# --------------------------
 # 공격 스킬 클래스
 # --------------------------
 class Skill:
