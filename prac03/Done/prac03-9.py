@@ -166,10 +166,10 @@ while running:
                         level, choice = 0, -1
                         # 승리/패배 체크
                         if not player.alive():
-                            message += "\nDefeat...T_T"
+                            message += " ==> Defeat...T_T"
                             gameover = True
                         elif not any(enemy.alive() for enemy in enemies):
-                            message += "\nVictory!!!"
+                            message += " ==> Victory!!!"
                             gameover = True
 
     # ----------------------
