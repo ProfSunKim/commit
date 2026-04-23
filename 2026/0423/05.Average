@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    double math = 85.5;
+    double english = 90.0;
+    double science = 95.5;
+
+    // 괄호가 없을 때의 잘못된 계산 (science만 3으로 나뉨)
+    double wrong_avg = math + english + science / 3.0;
+    
+    // 괄호를 사용한 올바른 계산
+    double correct_avg = (math + english + science) / 3.0;
+
+    printf("잘못된 평균: %.2f\n", wrong_avg);
+    printf("올바른 평균: %.2f\n", correct_avg);
+    
+    return 0;
+}
