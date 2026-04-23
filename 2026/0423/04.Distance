@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    // 1. 변수 선언
+    double km, mile;
+    // 변환 상수를 변수로 선언해두면 코드가 더 깔끔해짐
+    const double KM_TO_MILE = 0.621371;
+
+    // 2. 입력 받기
+    printf("변환할 거리(km)를 입력하세요: ");
+    scanf("%lf", &km);
+
+    // 3. 계산 과정
+    mile = km * KM_TO_MILE;
+
+    // 4. 결과 출력
+    // %.2f를 사용하여 소수점 두 자리까지 출력하도록 제한
+    printf("%.2f km는 약 %.2f mile입니다.\n", km, mile);
+    
+    return 0;
+}
