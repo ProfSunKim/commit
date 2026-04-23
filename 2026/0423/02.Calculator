@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 3;
+
+    printf("A + B = %d\n", a + b);
+    printf("A - B = %d\n", a - b);
+    printf("A * B = %d\n", a * b);
+    
+    // 정수 나눗셈의 특징 설명 (소수점이 버려짐)
+    printf("A / B (몫) = %d\n", a / b);
+    printf("A %% B (나머지) = %d\n", a % b);
+    
+    return 0;
+}
