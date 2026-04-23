@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    double cel, fah;
+
+    printf("섭씨(C) 온도를 입력하세요: ");
+    // 주의 1: double형 입력은 %lf 사용
+    // 주의 2: 변수 앞에 반드시 & 기호 붙이기
+    scanf("%lf", &cel); 
+
+    // 수학 공식: Fahrenheit = (9/5) * Celsius + 32
+    // 주의: 9/5로 적으면 정수 나눗셈이 되어 1이 됨! 반드시 9.0/5.0으로 작성
+    fah = (9.0 / 5.0) * cel + 32.0;
+
+    // %.2f를 사용하여 소수점 둘째 자리까지만 깔끔하게 출력
+    printf("입력하신 섭씨 온도는 화씨 %.2f도 입니다.\n", fah);
+    
+    return 0;
+}
