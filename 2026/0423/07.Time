@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int total, hour, min, sec;
+
+    printf("전체 시간(초)를 입력하세요: ");
+    scanf("%d", &total);
+
+    hour = total / 3600;
+    
+    // 60으로 나눈 몫은 '분'이 됩니다.
+    min = (total % 3600) / 60;
+    
+    // 60으로 나누고 남은 나머지는 '초'가 됩니다.
+    sec = (total % 3600) % 60;
+
+    printf("%d초는 %d시간 %d분 %d초입니다.\n", total, hour, min, sec);
+
+    return 0;
+}
